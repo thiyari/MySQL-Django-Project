@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Delete Record</title>
+</head>
+<body>
+    <center>
+        <h1>How to Delete a particular record from MySQL Database</h1>
+        <h2>Python Django Web Tutorials</h2>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Employee Id</th>
+                <th>Empname</th>
+                <th>Email</th>
+                <th>Salary</th>
+            </tr>
+            {% for result in delemprec %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.empname}}</td>
+                <td>{{result.email}}</td>
+                <td>{{result.salary}}</td>
+                <td><a href="/reguser/delete/{{result.id}}/" onclick="return confirm('are you sure you want to delete?')"">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

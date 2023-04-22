@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit Employee Details</title>
+</head>
+<body>
+    <center>
+        <h1>Edit & Update Employee Record</h1>
+        <hr/>
+        <form method="post" action="/reguser/update/{{editupdaterecord.id}}/">
+        {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Employee Id</td>
+                <td><input type="text" name="id" value="{{editupdaterecord.id}}"></td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="empname" value="{{editupdaterecord.empname}}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" value="{{editupdaterecord.email}}"></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input type="text" name="salary" value="{{editupdaterecord.salary}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="update"/> | <a href="{% url 'displaydata' %}">Back To Home Page</a>
+        {% if messages %}
+        {% for updaterecord in messages %}
+        <h3 style="color: green;">{{updaterecord}}</h3>
+        {% endfor %}
+        {% endif %}
+        
+    </form>
+    </center>
+</body>
+</html>

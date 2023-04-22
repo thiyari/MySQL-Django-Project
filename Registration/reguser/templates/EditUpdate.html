@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit & Update Records</title>
+</head>
+<body>
+    <center>
+        <h1>How To Edit & Update Records in Django</h1>
+        <h2>Django Python Web Tutorials</h2>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Employee Id</th>
+                <th>Empname</th>
+                <th>Email</th>
+                <th>Salary</th>
+            </tr>
+            {% for displayemp in editupdaterecord %}
+            <tr>
+                <td>{{displayemp.id}}</td>
+                <td>{{displayemp.empname}}</td>
+                <td>{{displayemp.email}}</td>
+                <td>{{displayemp.salary}}</td>
+                <td><a href="/reguser/edit/{{displayemp.id}}/">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

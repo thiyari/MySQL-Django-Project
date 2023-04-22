@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Configure The MySQL (phpMyAdmin) & Display Records</title>
+</head>
+<body>
+    <h1>How To Configure the MySQL (phpMyAdmin) Database</h1>
+    <h2>Python using Django Webframework</h2>
+    <hr/>
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Empname</th>
+        <th>Email</th>
+        <th>Salary</th>
+    </tr>
+    {% for getdata in EmployeeDetails %}
+    <tr>
+        <td>{{getdata.id}}</td>
+        <td>{{getdata.empname}}</td>
+        <td>{{getdata.email}}</td>
+        <td>{{getdata.salary}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

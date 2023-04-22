@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Insert New Record</title>
+</head>
+<body>
+    <h1>Create Or New Record Insert into MySQL (phpMyAdmin)</h1>
+    <h2>Python Django Web Programming</h2>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+    Employee Name: <input type="text" placeholder="Enter Employee Name" name="empname" required autocomplete="off"/>
+    Email: <input type="text" placeholder="Enter Email Id" name="email" required/><br/>
+    Salary:<input type="text" placeholder="Enter your Salary" name="salary" required/><br/>
+    <input type="submit" value="Insert Record"/>
+    {% if messages %}
+    {% for message in messages %}
+    <h2 style="color:green;">{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    </form>
+    <hr/>
+</body>
+</html>
